@@ -18,29 +18,50 @@
     }
 
     // Regular
+    console.log('I am a regular console log.');
 
     // Interpolated
+    console.log('I am the %s console log', 'interpolated');
 
     // Styled
+    console.log('%c I am the styled console log', 'font-size:20px; background: red;');
 
     // warning!
+    console.warn('This is a warning!');
 
     // Error :|
+    console.error('This is an error!');
 
     // Info
-
+    console.info('This is an info console log. I give information.')
+   
     // Testing
-
+    console.assert(1 == 1, 'This assert is true, and this should not print.');
+    console.assert(1 == 2, 'This assert is false, and this should not print.');
+    
     // clearing
+    console.clear();
 
     // Viewing DOM Elements
-
-    // Grouping together
+    const paragraph = document.querySelector('p');
+    console.dir(paragraph);
 
     // counting
+    console.count('Nelly');
+    console.count('Nelly');
+    console.count('Anaya');
+    console.count('Nelly');
+    console.count('Nelly');
+    console.count('Anaya');
 
     // timing
-
+    console.time('fetching data');
+    fetch('https://api.github.com/users/wesbos')
+      .then(data => data.json())
+      .then(data => {
+        console.timeEnd('fetching data');
+        console.log(data);
+      });
   </script>
 </body>
 </html>
